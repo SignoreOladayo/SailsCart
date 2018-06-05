@@ -1,0 +1,24 @@
+.products-list {
+    width: 100%;
+}
+
+
+.products-list ul {
+    width:100%;
+}
+
+
+.products-list li {
+    width:24%;
+    display:inline-block;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.products-list li:first-child {
+    padding-left:0;
+}
+
+.products-list li:last-child {
+    padding-right:0;
+}

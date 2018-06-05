@@ -28,6 +28,14 @@ module.exports.routes = {
     view: 'pages/homepage'
   },
 
+
+
+  'get /products': 'PageController.index',
+
+  'get /product/add': 'PageController.add',
+
+  'post /product/add': 'ProductController.create',
+
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
