@@ -14,6 +14,7 @@ module.exports = {
         var image = req.body.image
         var desc = req.body.description
 
+
         await Product.create({
             name: productName,
             price: price,

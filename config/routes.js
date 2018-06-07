@@ -36,6 +36,8 @@ module.exports.routes = {
 
   'post /product/add': 'ProductController.create',
 
+  'get /add-to-cart/:id': 'CartController.add',
+
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
