@@ -17,7 +17,7 @@ module.exports = {
     },
 
     productQty: {
-      type: 'string',
+      type: 'number',
       required: true
     }
 
@@ -43,7 +43,7 @@ module.exports = {
 
     //push the first product in the cart
 
-    cart.items[product[0].id] = {
+    cart.items['item'+product[0].id] = {
       qty: inputs.productQty,
       product: product[0]
     }

@@ -14,8 +14,11 @@ module.exports = {
   	if(req.session.cart) {
 
   		//upate current cart if cart is in session
+      //send the request object to the update helper
 
-        return res.json('There is already a cart in session');
+      var updateCart = await sails.helpers.updateCart(req);
+
+        return res.redirect('back')
 
   	} else {
 
@@ -25,12 +28,16 @@ module.exports = {
   		//Put it in session
   		req.session.cart = cart
 
-  		return res.json(req.session.cart)
+  		return res.redirect('back')
   	}
 
-  	
+  },
 
-  	
+  update: async function(req, res) {
+
+    var updateCart = await sails.helpers.updateCart(req);
+
+    return res.redirect('back')
 
   }
 

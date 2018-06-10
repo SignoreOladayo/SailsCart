@@ -42,7 +42,13 @@
               <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i></a>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i>
+              <% if (req.session.cart) { %>
+                
+                <span class="badge badge-danger"><%= req.session.cart.totalQty %></span>
+                
+              <% } %>
+              </a>
             </li>
           </ul>
         </div>

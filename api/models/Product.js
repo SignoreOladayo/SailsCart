@@ -19,7 +19,7 @@ module.exports = {
     },
 
     price: {
-      type: 'string',
+      type: 'number',
       required:true
     },
 
