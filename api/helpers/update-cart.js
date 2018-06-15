@@ -21,7 +21,7 @@ module.exports = {
     //check if there is a qty in the request parameters
     //if there is, use it, if there isn't, default to 1
 
-    if(inputs.req.param('qty') != undefined && inputs.req.param('qty') > 1) {
+    if(inputs.req.param('qty') != undefined && inputs.req.param('qty') >= 1) {
 
       //set the quantity to the request param qty
       var qty = inputs.req.param('qty')

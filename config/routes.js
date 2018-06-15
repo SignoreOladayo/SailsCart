@@ -40,6 +40,10 @@ module.exports.routes = {
 
   'post /update-cart-item': 'CartController.update',
 
+  'get /cart': 'PageController.showCartPage',
+
+  'get /remove-item/:id': 'CartController.remove'
+
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

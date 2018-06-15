@@ -25,6 +25,25 @@ module.exports = {
         
        return res.view('pages/index', {status: 'empty', products: products});
           
+    }, 
+
+    showCartPage: function(req, res) {
+
+        var cart = req.session.cart
+
+        if (cart != undefined) {
+
+            var items = cart.items
+
+        } else {
+
+            var items = 0
+
+        }
+
+        return res.view('pages/cart', {items: items})
+
+        
     }
 
 };

@@ -28,7 +28,7 @@ module.exports = {
   fn: async function (inputs, exits) {
 
     //find the product
-    var product = await Product.find({ id: inputs.productId})
+    var product = await Product.findOne({ id: inputs.productId})
 
     
 
@@ -37,22 +37,20 @@ module.exports = {
 
       items : {},
       totalQty: inputs.productQty,
-      totalPrice: product[0].price
+      totalPrice: product.price
 
     }
 
     //push the first product in the cart
 
-    cart.items['item'+product[0].id] = {
+    cart.items['item'+product.id] = {
       qty: inputs.productQty,
-      product: product[0]
+      product: product
     }
 
     // All done.
     return exits.success(cart);
 
   }
-
-
 };
 

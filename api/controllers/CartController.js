@@ -18,7 +18,10 @@ module.exports = {
 
       var updateCart = await sails.helpers.updateCart(req);
 
-        return res.redirect('back')
+      req.session.cart = updateCart
+
+      return res.redirect('back')
+       
 
   	} else {
 
@@ -29,6 +32,7 @@ module.exports = {
   		req.session.cart = cart
 
   		return res.redirect('back')
+      
   	}
 
   },
@@ -36,6 +40,25 @@ module.exports = {
   update: async function(req, res) {
 
     var updateCart = await sails.helpers.updateCart(req);
+
+    return res.redirect('back')
+
+  },
+
+  remove: function(req, res) {
+
+    var cart= req.session.cart
+
+    var id = 'item'+req.param('id')
+
+    //update total qty
+    cart.totalQty = cart.totalQty - cart.items[id].qty
+
+    //update total price
+    cart.totalPrice = cart.totalQty - cart.items[id].qty * cart.items[id].product.price
+
+    //delet the item
+    delete cart.items[id]
 
     return res.redirect('back')
 
